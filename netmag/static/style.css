@@ -1,0 +1,176 @@
+body{
+    background-color: #fdfdfd;
+    color: #2e2e2e;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 28px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.title{
+	text-align: center;
+	text-decoration: underline;
+	color: red;
+	font-family: "Times New Roman", Times, serif; 
+}
+
+.head{
+	max-width: 640px;
+    width: 96%;
+    padding-bottom: 2%;
+	margin: auto;
+}
+.content{
+    border: 1px solid #fbfbfb;
+    background-color: #ddd;
+    max-width: 640px;
+    width: 96%;
+    padding: 2%;
+	margin: 28px  auto;
+}
+.post{
+	border: 1px black solid;
+	margin-bottom: 5px;
+	padding-left: 15px;
+}
+
+#posted{
+	text-align: right;
+	font-size: 10px;
+	padding-right: 10px;
+}
+
+/*--- НАВИГАЦИЯ ---*/
+.nav{
+	float:left;
+	width:100%;
+	list-style:none;
+	font-weight:bold;
+	margin-bottom:30px;
+}
+.nav li{
+	float:left;
+	margin-right:5px;
+	position:relative;
+	display:block;
+}
+.nav li a{
+	display:block;
+	padding:5px;
+	color:#fff;
+	background:#333;
+	text-decoration:none;
+	
+	text-shadow:1px 1px 1px rgba(0,0,0,0.75); /* Тень текста*/
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+}
+.nav li a:hover{
+	color:#fff;
+	background:#6b0c36;
+	background:rgba(107,12,54,0.75); /* полупрозрачность */
+	text-decoration:underline;
+}
+
+/*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
+.nav ul{
+	list-style:none;
+	position:absolute;
+	left:-9999px; /* Скрываем за экраном, когда не нужно*/
+	opacity:0; /* Устанавливаем начальное состояние прозрачности */
+	-webkit-transition:0.25s linear opacity; /* В Webkit выпадающие пункты будут проявляться */
+}
+.nav ul li{
+	padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
+	float:none;
+	width: 80px;
+	text-align: center;
+}
+.nav ul a{
+	white-space:nowrap; /* Останавливаем перенос текста и создаем многострочный выпадающий пункт */
+	display:block;
+	position: relative;
+}
+.nav li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+	left:-50px; /* Приносим его обратно на экран, когда нужно */
+	opacity:1; /* Делаем непрозрачным */
+}
+.nav li:hover a{ /* Устанавливаем стили для верхнего уровня, когда выводится выпадающий список */
+	background:#6b0c36;
+	background:rgba(107,12,54,0.75); /* Выглядит полупрозрачным */
+	text-decoration:underline;
+	display: block;
+}
+.nav li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
+	text-decoration:none;
+	-webkit-transition:-webkit-transform 0.075s linear;
+}
+.nav li:hover ul li a:hover{ /* Устанавливаем стили для выпадающих пунктов, когда курсор наводится на конкретный пункт */
+	background:#333;
+	background:rgba(51,51,51,0.75); /* Будет полупрозрачным */
+	text-decoration:underline;
+	-moz-transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+}
+/*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
+
+#back{
+	margin: 5px !important;
+	position: relative;
+	text-align: right !important;
+	font-size: 15px;
+}
+
+#category{
+	font-size: 10px;
+	display: block;
+	text-align: right;
+	margin-top: -40px;
+	padding-right: 10px;
+}
+
+.login{
+	display: block;
+	text-align: right;
+}
+
+#admin{
+	text-align: right;
+	color: #13e543;
+}
+#admin a{
+	text-decoration: none;
+	color: blue;
+	font-weight: bold;
+}
+
+#admin a:hover{
+	border-bottom: 1px dashed;
+}
+
+#footer{
+	background: red;
+	text-align: center;
+	display:block;
+	clear:both;
+	
+}
+
+#footer ul{
+	list-style: none;
+}
+#footer ul li{
+	margin-top: -2%;
+	float: left;
+	position: relative;
+	display:block;
+	margin-left: 5px;
+	border-right: 1px solid;
+	
+	padding-right: 5px;
+}
+#footer ul li:last-child{
+	border-right: none;
+}

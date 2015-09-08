@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+  <h1> Learning to create </h1>
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<article>
+    <header>
+        <h1 style= "text-align: center;"> {{post.title}} </h1>
+		
+        <p style="text-align: right;">
+            Posted on
+            <time datetime="{{post.created|date:"c"}}">
+            {{post.created|date}}
+            </time>
+        </p>
+    </header>
+	<div id="content">
+    {{post.content|safe}}
+	</div>
+</article>
+<div id="back">
+<a href="javascript:history.go(-1)">Back-></a>
+</div>
+{% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}style.css">
+        <meta charset="utf-8">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        </head>
+    <body>
+	
+	<div class="head">
+		<h1 class="title">Learning to create</h1>	
+		<div id="admin">
+		{%if user.is_superuser%}
+		You are a Super User, so you can go to <a href ="/admin" target="_blank">admin cabinet</a>.
+		{%endif%}
+		</div>
+		<div class="login"> 
+		{% if user.is_authenticated %}
+			<p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+			<ul class="nav">
+		<li>
+			<a href="/" title="Вернуться на главную страницу">Главная</a>
+		</li>
+		<li>
+			<a href="#" title="Категории">Категории</a>
+			<ul>
+				{%for cat in categories%}
+				<li><a href="{{cat}}">{{cat}}</a></li>
+				{%endfor%}
+			</ul>
+		</li>
+		<li>
+			<a href="/contacts" title="Мои контакты">Мои Контакты</a>
+		</li>
+		<li>
+			<a href="/accounts/logout" title="LogOut">Log Out</a>
+		</li>
+		
+		
+		{% else %}
+			<p>Welcome, new user. Please <a href="/accounts/login" title="LogIn">log in</a> or just <a href="/accounts/register">register</a>.</p>
+			<ul class="nav">
+		<li>
+			<a href="/" title="Вернуться на главную страницу">Главная</a>
+		</li>
+		<li>
+			<a href="#" title="Категории">Категории</a>
+			<ul>
+				{%for cat in categories%}
+				<li><a href="{{cat}}">{{cat}}</a></li>
+				{%endfor%}
+			</ul>
+		</li>
+		<li>
+			<a href="/contacts" title="Мои контакты">Мои Контакты</a>
+		</li>
+		{% endif %}
+	</div>
+	</div>
+	<div class="content">
+            {% block content %}
+			{% endblock %}
+		</div>	
+        </div>
+	<div class="content" id="footer">
+	
+		<ul>
+			<li>
+				<a href="">Main page</a>
+			</li>
+			
+			<li>
+				<a href="">contacts</a>
+			</li>
+			
+			<li>
+				<a href="">something else</a>
+			</li>
+			
+			<li>
+				<a href="">one more</a>
+			</li>
+		</ul>
+		<br />
+		All rights reserved.
+		
+	</div>
+    </body>
+</html>
